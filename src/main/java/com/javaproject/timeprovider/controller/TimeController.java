@@ -12,6 +12,6 @@ public class TimeController {
 
     @RequestMapping(method = RequestMethod.GET)
     String getTime() {
-        return (The time is: "+ String.valueOf(LocalTime.now()))
+        return ("The time is: "+ String.valueOf(LocalTime.now()))
     }
 }
