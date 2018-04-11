@@ -13,7 +13,7 @@ spec:
       # Port to forward to inside the pod
       targetPort: 9000
       # Port accessible outside cluster
-      nodePort: 9000
+      nodePort: 30000
   type: LoadBalancer
 
 
