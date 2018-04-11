@@ -1,37 +1,11 @@
----
-kind: Service
 apiVersion: v1
+kind: Pod
 metadata:
-  name: exampleservice
+  name: time-provider
 spec:
-  selector:
-    app: app
-  ports:
-    - protocol: "TCP"
-      # Port accessible inside cluster
-      port: 9000
-      # Port to forward to inside the pod
-      targetPort: 9000
-      # Port accessible outside cluster
-      nodePort: 30000
-  type: LoadBalancer
-
-
-
----
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: myappdeployment
-spec:
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: app
-    spec:
-      containers:
-        - name: app
-          image: dworza/time-provider:latest
-          ports:
-            - containerPort: 9000
+  containers:
+    - name: time-provider
+      image: time-provider
+      ports:
+        - containerPort: 9000
+          hostPort: 90000
