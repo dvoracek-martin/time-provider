@@ -5,15 +5,15 @@ metadata:
   name: exampleservice
 spec:
   selector:
-    app: myapp
+    app: app
   ports:
     - protocol: "TCP"
       # Port accessible inside cluster
-      port: 8081
+      port: 9000
       # Port to forward to inside the pod
-      targetPort: 8080
+      targetPort: 9000
       # Port accessible outside cluster
-      nodePort: 30002
+      nodePort: 9000
   type: LoadBalancer
 
 
@@ -24,14 +24,14 @@ kind: Deployment
 metadata:
   name: myappdeployment
 spec:
-  replicas: 5
+  replicas: 2
   template:
     metadata:
       labels:
-        app: myapp
+        app: app
     spec:
       containers:
-        - name: myapp
+        - name: app
           image: dworza/time-provider:latest
           ports:
             - containerPort: 9000
