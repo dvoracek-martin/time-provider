@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: time-provider
-      image: time-provider
+      image: dworza/time-provider
       ports:
         - containerPort: 8086
           hostPort: 8086
