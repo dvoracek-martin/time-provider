@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: time-provider
 spec:
+  replicas: 1
   containers:
     - name: time-provider
       image: time-provider
