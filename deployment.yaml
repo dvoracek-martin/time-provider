@@ -3,7 +3,9 @@ kind: Pod
 metadata:
   name: time-provider
 spec:
-  hostNetwork: true
   containers:
     - name: time-provider
       image: time-provider
+      ports:
+        - containerPort: 8086
+          hostPort: 8086
