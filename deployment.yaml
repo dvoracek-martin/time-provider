@@ -1,11 +1,16 @@
 apiVersion: v1
-kind: Pod
+kind: Service
 metadata:
   name: time-provider
+  labels:
+    name: time-provider
+    context: java-project
 spec:
   type: NodePort
   ports:
+    # the port that this service should serve on
     - port: 9000
-  containers:
-    - name: time-provider
-      image: time-provider
+  # label keys and values that must match in order to receive traffic for this service
+  selector:
+    name: time-provider
+    context: java-project
