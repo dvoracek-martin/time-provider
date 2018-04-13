@@ -3,9 +3,9 @@ kind: Pod
 metadata:
   name: time-provider
 spec:
+  type: NodePort
+  ports:
+    - port: 9000
   containers:
     - name: time-provider
       image: time-provider
-      ports:
-        - containerPort: 9000
-          hostPort: 90000
