@@ -12,6 +12,6 @@ public class TimeController {
 
     @RequestMapping(method = RequestMethod.GET)
     String getTime() {
-        return ("The exact time on pod" + System.getenv("HOSTNAME") + "is: " + String.valueOf(LocalTime.now()));
+        return ("The exact time on pod " + System.getenv("HOSTNAME") + " is: " + String.valueOf(LocalTime.now()));
     }
 }
