@@ -11,7 +11,7 @@ spec:
       # Port accessible inside cluster
       port: 8081
       # Port to forward to inside the pod
-      targetPort: 8080
+      targetPort: 80
       # Port accessible outside cluster
       nodePort: 30002
   type: LoadBalancer
@@ -34,4 +34,4 @@ spec:
         - name: time-provider
           image: dworza/time-providerQ
           ports:
-            - containerPort: 8080
+            - containerPort: 80
