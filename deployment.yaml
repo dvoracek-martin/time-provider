@@ -1,11 +1,19 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: time-provider
 spec:
-#  hostNetwork: true
-  containers:
-    - name: time-provider
-      image: dworza/time-provider
-#       ports:
-#        - containerPort: 9002
+  selector:
+    matchLabels:
+      run: time-provider
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: time-provider
+    spec:
+      containers:
+      - name: time-provider
+        image: dworza/time-provider
+        ports:
+        - containerPort: 9002
