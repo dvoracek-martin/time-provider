@@ -2,7 +2,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: exampleservice
+  name: time-provider
 spec:
   selector:
     app: myapp
