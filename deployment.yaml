@@ -20,7 +20,7 @@ spec:
 
 ---
 apiVersion: v1
-kind: Pod
+kind: Deployment
 metadata:
   name: time-provider
 spec:
