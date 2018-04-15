@@ -3,7 +3,6 @@ kind: Pod
 metadata:
   name: time-provider
 spec:
-  hostNetwork: true
   containers:
     - name: time-provider
       image: dworza/time-provider
