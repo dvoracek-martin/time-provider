@@ -8,4 +8,4 @@ spec:
     - name: time-provider
       image: dworza/time-provider
       ports:
-        - containerPort: 8080
+        - containerPort: 9000
