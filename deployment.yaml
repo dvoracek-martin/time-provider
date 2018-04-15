@@ -6,14 +6,14 @@ spec:
   selector:
     matchLabels:
       run: time-provider
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
         run: time-provider
     spec:
       containers:
-      - name: time-provider
-        image: dworza/time-provider
+      - name: nginxhttps
+        image: dworza/time-provider:latest
         ports:
         - containerPort: 9002
