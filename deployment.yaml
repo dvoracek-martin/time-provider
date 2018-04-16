@@ -17,4 +17,4 @@ spec:
         image: dworza/time-provider:latest
         imagePullPolicy: "Always"
         ports:
-        - containerPort: 9002
+        - containerPort: 9001
