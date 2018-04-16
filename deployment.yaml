@@ -15,5 +15,6 @@ spec:
       containers:
       - name: time-provider
         image: dworza/time-provider:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 9002
