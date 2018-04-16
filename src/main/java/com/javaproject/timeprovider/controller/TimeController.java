@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalTime;
+import java.util.Locale;
 
 @RestController
 @RequestMapping(value = "/")
@@ -16,7 +17,7 @@ public class TimeController {
 
     @RequestMapping(method = RequestMethod.GET)
         String getTime() {
-        logger.info("WOHOOO! SOMEBODY CALLED ME!");
+        logger.info("Application received " + RequestMethod.GET + " request on url: /" );
         String response = new JSONObject()
                 .put("time", String.valueOf(LocalTime.now()))
                 .put("pod", System.getenv("HOSTNAME"))
