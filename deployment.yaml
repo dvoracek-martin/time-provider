@@ -17,19 +17,18 @@ spec:
         image: dworza/time-provider:latest
         imagePullPolicy: "Always"
         ports:
-        - containerPort: 9001
+        - containerPort: 9002
 
----
-
-apiVersion: v1
+--
 kind: Service
+apiVersion: v1
 metadata:
-  name: time-provider
-  labels:
-    run: time-provider
+  name:  time-provider
 spec:
-  ports:
-  - port: 9001
-    protocol: TCP
   selector:
-    run: time-provider
+    app:  time-provider
+  ports:
+  - protocol: TCP
+    port: 9002
+    targetPort: 9002
+  type: NodePort
