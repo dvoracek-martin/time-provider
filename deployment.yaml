@@ -1,35 +1,42 @@
 apiVersion: apps/v1
-kind: Deployment
+  kind: Deployment
 metadata:
-  name: time-provider
+    name: time-provider
 spec:
-  selector:
-    matchLabels:
-      run: time-provider
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        run: time-provider
-    spec:
-      containers:
-      - name: time-provider
-        image: dworza/time-provider:latest
-        imagePullPolicy: "Always"
-        ports:
-        - containerPort: 9002
+    selector:
+      matchLabels:
+        app: time-provider
+        tier: time-provider
+        track: stable
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: time-provider
+          tier: time-provider
+          track: stable
+      spec:
+        containers:
+          - name: time-provider
+                  image: dworza/time-provider:latest
+                  imagePullPolicy: "Always"
+            ports:
+              - name: http
+                containerPort: 9000
 
----
+
+  ---
 
 kind: Service
 apiVersion: v1
 metadata:
-  name: time-provider
+    name: time-provider
 spec:
-  selector:
-    app: time-provider
-    tier: backend
-  ports:
-  - protocol: TCP
-    port: 9002
-    targetPort: http
+    selector:
+      app: java-project-gateway
+      tier: java-project-gateway
+    ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: http
+
