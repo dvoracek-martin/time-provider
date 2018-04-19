@@ -22,7 +22,7 @@ spec:
           imagePullPolicy: "Always"
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 90
 ---
 
 kind: Service
@@ -35,5 +35,4 @@ spec:
     tier: backend
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: http
+    port: 90
