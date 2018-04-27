@@ -4,7 +4,7 @@ metadata:
   name: java-project
 spec:
   selector:
-    name: time-provider
+    name: time-provider-DNS-service
   clusterIP: None
   ports:
   - name: time-provider-port
