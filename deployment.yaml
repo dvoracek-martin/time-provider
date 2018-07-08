@@ -26,5 +26,3 @@ spec:
   - image:  dworza/time-provider:latest
     command:
     name: time-provider
-
-
