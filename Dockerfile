@@ -1,4 +1,4 @@
 FROM openjdk
-ADD target/java-project-time-provider-web.jar java-project-time-provider-web.jar
-ENTRYPOINT ["java", "-jar", "/java-project-time-provider-web.jar"]
+ADD target/app.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
 EXPOSE 90
